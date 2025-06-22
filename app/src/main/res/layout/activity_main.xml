@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -12,19 +12,22 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="visible"
         app:defaultNavHost="false"
-        app:navGraph="@navigation/mainnavigation"  />
+        app:navGraph="@navigation/mainnavigation" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/bottom_nav_host"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
-        app:navGraph="@navigation/bot_nav_graph"
-        app:defaultNavHost="false" />
+        android:visibility="gone"
+        app:defaultNavHost="false"
+        app:navGraph="@navigation/bot_nav_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_view"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
         android:layout_gravity="bottom"
@@ -32,9 +35,8 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_3sdp"
         android:background="@drawable/nav_bottom_selector"
-        app:labelVisibilityMode="unlabeled"
         app:itemRippleColor="@color/black"
-        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/bottomnavigationmenu" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout >
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

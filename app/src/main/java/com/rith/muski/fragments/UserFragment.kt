@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import com.rith.muski.Model.User
 import com.rith.muski.R
@@ -16,8 +18,10 @@ import com.rith.muski.databinding.FragmentUserBinding
 import com.rith.muski.viewmodel.AddUserViewModel
 
 class UserFragment:Fragment() {
-   private lateinit var userViewModel : AddUserViewModel
+       private lateinit var userViewModel : AddUserViewModel
     private lateinit var binding: FragmentUserBinding
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,14 +42,7 @@ class UserFragment:Fragment() {
             binding.inputAddress.setText("")
 
         }
-        val co=userViewModel.getAllUser()
-        co?.use {
-            while (it.moveToNext()) {
-                val name = it.getString(it.getColumnIndexOrThrow("name"))
-                val email = it.getString(it.getColumnIndexOrThrow("email"))
-                Log.d("MUSKI_USER", name + "   " + email)
-            }
-        }
+
     return  binding.root
     }
 }

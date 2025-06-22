@@ -51,8 +51,8 @@ class DashboardFragment : Fragment() {
         val adapter = UserActivityAdapter(activityList) { item ->
             when (item.title) {
                 "Order" -> findNavController().navigate(R.id.action_dashboardFragment_to_orderFragment)
-                "Add merchant" -> findNavController().navigate(R.id.action_dashboardFragment_to_orderFragment)
-                "Water" -> findNavController().navigate(R.id.action_dashboardFragment_to_orderFragment)
+                "Add merchant" -> findNavController().navigate(R.id.action_dashboardFragment_to_userFragment2)
+                "Water" -> findNavController().navigate(R.id.action_dashboardFragment_to_waterFragment)
                 "Profit" -> findNavController().navigate(R.id.action_dashboardFragment_to_orderFragment)
             }
         }

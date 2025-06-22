@@ -58,15 +58,21 @@ class DatabaseHelper private constructor(context: Context) : SQLiteOpenHelper(
             );
         """.trimIndent())
 
+        db.execSQL("DROP TABLE IF EXISTS orders;") // drop old table if exists
+
         db.execSQL("""
-            CREATE TABLE IF NOT EXISTS orders (
-                o_id INTEGER PRIMARY KEY,
-                u_id INTEGER,
-                o_total REAL NOT NULL,
-                o_payment TEXT NOT NULL,
-                o_date TEXT NOT NULL
-            );
-        """.trimIndent())
+        CREATE TABLE IF NOT EXISTS orders (
+            o_id BIGINT PRIMARY KEY,
+            u_id INTEGER NOT NULL,
+            o_amount DOUBLE not null,
+            o_date TEXT not null, -- SQLite doesn't have DATE, use TEXT
+            o_paid DOUBLE,
+            o_due_payment DOUBLE,
+            o_five_ml INTEGER,
+            o_one_l INTEGER,
+            o_twenty_l INTEGER
+        );
+    """.trimIndent())
 
         db.execSQL("""
             CREATE TABLE IF NOT EXISTS order_items (

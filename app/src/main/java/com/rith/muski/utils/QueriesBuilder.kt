@@ -9,9 +9,28 @@ object QueriesBuilder {
         return "INSERT INTO water(w_type, w_rate, w_quantity) VALUES('$wType', $rate, '$quantity');"
     }
 
-    fun insertOrder(oId: Int, uId: Int, total: Double, payment: String, date: String): String {
-        return "INSERT INTO orders(o_id, u_id, o_total, o_payment, o_date) VALUES($oId, $uId, $total, '$payment', '$date');"
+    fun insertOrder(
+
+        uId: Int,
+        amount: Double,
+        paid: Double,
+        due: Double,
+        date: String,
+        fiveMl: Int,
+        oneL: Int,
+        twentyL: Int
+    ): String {
+        return """
+        INSERT INTO orders(
+             u_id, o_amount, o_paid, o_due_payment, o_date,
+            o_five_ml, o_one_l, o_twenty_l
+        ) VALUES(
+            $uId, $amount, $paid, $due, '$date',
+            $fiveMl, $oneL, $twentyL
+        );
+    """.trimIndent()
     }
+
 
     fun insertOrderItem(oId: Int, wId: Int): String {
         return "INSERT INTO order_items(o_id, w_id) VALUES($oId, $wId);"
@@ -27,6 +46,29 @@ object QueriesBuilder {
 
     fun getAllUsers(): String {
     return  "SELECT * FROM user;"
+    }
+
+    fun getFiveHundredMlOrderByWaterId(wId: Int): String {
+    return """
+            SELECT o.*, u.* FROM orders o
+            JOIN user u ON o.u_id = u.u_id
+            WHERE o_five_ml > 0;
+        """
+    }
+
+    fun getOneLOrderByWaterId(wId: Int):String {
+        return """
+            SELECT o.*, u.* FROM orders o
+            JOIN user u ON o.u_id = u.u_id
+            WHERE o_one_l > 0;
+        """
+    }
+    fun getTwentyLOrderByWaterId(wId: Int):String {
+        return """
+            SELECT o.*, u.* FROM orders o
+            JOIN user u ON o.u_id = u.u_id
+            WHERE o_twenty_l > 0;
+        """
     }
 
 }

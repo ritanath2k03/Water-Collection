@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 class WaterViewModel(application:Application): AndroidViewModel(application){
     private val waterRepo=WaterRepository(application)
     private val _waterList = MutableLiveData<List<Water>>()
+
     val waterList: LiveData<List<Water>> = _waterList
     fun insertInitialWater(){
         waterRepo.insertWater()
@@ -23,4 +24,5 @@ class WaterViewModel(application:Application): AndroidViewModel(application){
             _waterList.postValue(result)
         }
     }
+
 }

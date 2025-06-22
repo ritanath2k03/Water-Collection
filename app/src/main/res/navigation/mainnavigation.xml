@@ -22,10 +22,18 @@
         <action
             android:id="@+id/action_dashboardFragment_to_orderFragment"
             app:destination="@id/orderFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_waterFragment"
+            app:destination="@id/waterFragment" />
     </fragment>
     <fragment
         android:id="@+id/orderFragment"
         android:name="com.rith.muski.fragments.OrderFragment"
         android:label="OrderFragment"
         tools:layout="@layout/fragment_order"/>
+    <fragment
+        android:id="@+id/waterFragment"
+        android:name="com.rith.muski.fragments.WaterFragment"
+        android:label="WaterFragment"
+        tools:layout="@layout/fragment_water"/>
 </navigation>

@@ -19,8 +19,9 @@ class UserActivityAdapter(
         val icon: ImageView = itemView.findViewById(R.id.imageView)
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActivityViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_water_container_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_dashboard_grid_item, parent, false)
         return ActivityViewHolder(view)
     }
 
