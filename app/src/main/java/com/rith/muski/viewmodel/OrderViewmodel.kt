@@ -4,9 +4,12 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.rith.muski.Model.Order
 
 import com.rith.muski.repository.OrderRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 
 
@@ -14,9 +17,8 @@ class OrderViewmodel(application: Application): AndroidViewModel(application) {
     val orderRepository=OrderRepository(application)
     private val _orders = MutableLiveData<List<org.json.JSONObject>>()
     val orders: LiveData<List<org.json.JSONObject>> = _orders
-    fun insertSampleOrder(order:Order){
-    orderRepository.insertOrder(order)
-    }
+
+
     fun loadOrdersByWaterId(wId: Int) {
         val cursor = OrderRepository(getApplication()).getOrdersByWaterId(wId)
         val list = mutableListOf<JSONObject>()
@@ -40,6 +42,8 @@ class OrderViewmodel(application: Application): AndroidViewModel(application) {
             userObj.put("u_id", cursor.getInt(cursor.getColumnIndexOrThrow("u_id")))
             userObj.put("name", cursor.getString(cursor.getColumnIndexOrThrow("name")))
             userObj.put("address", cursor.getString(cursor.getColumnIndexOrThrow("address")))
+            userObj.put("phone", cursor.getString(cursor.getColumnIndexOrThrow("phone")))
+            userObj.put("email", cursor.getString(cursor.getColumnIndexOrThrow("email")))
 
             // combine
             val mainObj = JSONObject()
@@ -51,6 +55,12 @@ class OrderViewmodel(application: Application): AndroidViewModel(application) {
 
         cursor.close()
         _orders.postValue(list)
+    }
+
+    fun insertOrder(order: Order) {
+        viewModelScope.launch(Dispatchers.IO) {
+            orderRepository.insertOrder(order)
+        }
     }
 
 

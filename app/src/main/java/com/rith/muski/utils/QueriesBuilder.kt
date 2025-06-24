@@ -11,7 +11,7 @@ object QueriesBuilder {
 
     fun insertOrder(
 
-        uId: Int,
+        uId: Long?,
         amount: Double,
         paid: Double,
         due: Double,

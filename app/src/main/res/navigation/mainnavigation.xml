@@ -30,10 +30,19 @@
         android:id="@+id/orderFragment"
         android:name="com.rith.muski.fragments.OrderFragment"
         android:label="OrderFragment"
-        tools:layout="@layout/fragment_order"/>
+        tools:layout="@layout/fragment_order">
+        <action
+            android:id="@+id/action_orderFragment_to_makeOrderFramgent"
+            app:destination="@id/makeOrderFramgent" />
+    </fragment>
     <fragment
         android:id="@+id/waterFragment"
         android:name="com.rith.muski.fragments.WaterFragment"
         android:label="WaterFragment"
         tools:layout="@layout/fragment_water"/>
+    <fragment
+        android:id="@+id/makeOrderFramgent"
+        android:name="com.rith.muski.fragments.MakeOrderFramgent"
+        android:label="MakeOrderFramgent"
+        tools:layout="@layout/fragment_make_order"/>
 </navigation>

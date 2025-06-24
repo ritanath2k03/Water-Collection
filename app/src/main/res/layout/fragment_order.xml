@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -13,9 +14,14 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="order fragment"
-            android:textSize="@dimen/_20sdp" />
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

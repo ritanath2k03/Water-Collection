@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Muski</string>
+    <string name="order_instruction"><b>Note:</b> Select a merchant by typing their name. Enter bottle quantities for 500ml, 1L, and 20L. The total and due amounts will be auto-calculated after entering the paid amount. Review all fields and tap submit to save the order to your order history.</string>
 </resources>

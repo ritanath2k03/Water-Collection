@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/orderId"
+        android:layout_height="@dimen/_25sdp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:paddingLeft="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:text="Order ID:" />
+
+    <TextView
+        android:id="@+id/orderAmount"
+        android:paddingLeft="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+
+        android:layout_width="match_parent"
+
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:text="Amount:" />
+
+    <TextView
+        android:id="@+id/orderPaid"
+        android:paddingLeft="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:text="Paid:" />
+
+    <TextView
+        android:id="@+id/orderDue"
+        android:paddingLeft="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:text="Due:" />
+
+    <TextView
+        android:id="@+id/orderDate"
+        android:paddingLeft="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:text="Date:" />
+
+    <TextView
+        android:id="@+id/bottle500ml"
+        android:paddingLeft="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:text="500ml Bottles:" />
+
+    <TextView
+        android:id="@+id/bottle1L"
+        android:paddingLeft="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:text="1L Bottles:" />
+
+    <TextView
+        android:id="@+id/bottle20L"
+        android:paddingLeft="@dimen/_5sdp"
+
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_width="match_parent"
+        android:text="20L Bottles:" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:paddingLeft="@dimen/_5sdp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_width="match_parent"
+        android:text="Merchant Name:" />
+
+    <TextView
+        android:id="@+id/userAddress"
+        android:paddingLeft="@dimen/_5sdp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_width="match_parent"
+        android:text="Address:" />
+    <TextView
+        android:id="@+id/userPhone"
+        android:paddingLeft="@dimen/_5sdp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_width="match_parent"
+        android:text="Merchant Phone:" />
+    <TextView
+        android:id="@+id/useremail"
+        android:paddingLeft="@dimen/_5sdp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_width="match_parent"
+        android:text="Merchant Email:" />
+</LinearLayout>

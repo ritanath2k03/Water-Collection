@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.rith.muski.R
 import com.rith.muski.databinding.FragmentOrderBinding
 
@@ -17,6 +18,10 @@ class OrderFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         orderBinding=DataBindingUtil.inflate(inflater, R.layout.fragment_order,container,false)
+        orderBinding.header.setOnClickListener {
+            findNavController().navigate(R.id.action_orderFragment_to_makeOrderFramgent)
+        }
+
         return orderBinding.root
     }
 }

@@ -11,9 +11,9 @@ import com.rith.muski.R
 import org.json.JSONObject
 
 
-class OrderAdapter : ListAdapter<JSONObject, OrderAdapter.OrderViewHolder>(DiffCallback()) {
+class OrderAdapter(private val onItemClick: (JSONObject) -> Unit) : ListAdapter<JSONObject, OrderAdapter.OrderViewHolder>(DiffCallback()) {
 
-    class OrderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class OrderViewHolder(itemView: View,val onItemClick: (JSONObject) -> Unit) : RecyclerView.ViewHolder(itemView) {
         fun bind(json: JSONObject) {
             val order = json.getJSONObject("order")
             val user = json.getJSONObject("user")
@@ -21,12 +21,15 @@ class OrderAdapter : ListAdapter<JSONObject, OrderAdapter.OrderViewHolder>(DiffC
             itemView.findViewById<TextView>(R.id.orderprice).text = "₹${order.getDouble("o_amount")}"
             itemView.findViewById<TextView>(R.id.orderdate).text = order.getString("o_date")
             itemView.findViewById<TextView>(R.id.name).text = user.getString("name")
+            itemView.setOnClickListener {
+                onItemClick(json)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_order_item, parent, false)
-        return OrderViewHolder(view)
+        return OrderViewHolder(view,onItemClick)
     }
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {

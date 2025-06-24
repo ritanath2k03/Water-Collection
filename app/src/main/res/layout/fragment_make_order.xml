@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="binding"
+            type="com.rith.muski.fragments.MakeOrderFramgent" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/snow_white"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_10sdp"
+            android:text="Make Order"
+            android:textSize="@dimen/_20sdp"
+
+            app:layout_constraintBottom_toTopOf="@+id/v_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_top">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/snow_white"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/Instruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:text="@string/order_instruction"
+                    android:textSize="@dimen/_13sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="Merchant"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/merchantInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="center"
+                        android:inputType="text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="Order date"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/orderDateInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:inputType="none" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="500 ml"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/fiveHundredInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:text="@={binding.fiveHundredMl}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+
+                        android:text="1L"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/oneLitreInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="center"
+                        android:inputType="number"
+
+                        android:text="@={binding.oneL}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="20L"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/twentyLitreInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:text="@={binding.twentyL}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="Paid"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/paidInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:text="@={binding.paidAmount}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="Total"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/totalInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="Due "
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/dueInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/submitButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/light_blue"
+                    android:text="Submit" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
