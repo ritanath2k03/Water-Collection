@@ -35,4 +35,11 @@ class OrderRepository(private val context: Context) {
 
 
     }
+    fun getOrderDataForPieChartInDashboard():Cursor{
+        return  db.readableDatabase.rawQuery(QueriesBuilder.getOrderDataForPieChartInDashboard(),null)
+    }
+
+    fun getOrdersByWaterId(): Cursor {
+        return db.readableDatabase.rawQuery(QueriesBuilder.getOrdersForOrderList(),null)
+    }
 }

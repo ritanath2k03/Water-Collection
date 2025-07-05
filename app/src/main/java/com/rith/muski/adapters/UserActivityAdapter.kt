@@ -16,7 +16,7 @@ class UserActivityAdapter(
 
     class ActivityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val label: TextView = itemView.findViewById(R.id.wquantity)
-        val icon: ImageView = itemView.findViewById(R.id.imageView)
+      //  val icon: ImageView = itemView.findViewById(R.id.imageView)
     }
 
 
@@ -28,7 +28,7 @@ class UserActivityAdapter(
     override fun onBindViewHolder(holder: ActivityViewHolder, position: Int) {
         val item = items[position]
         holder.label.text = item.title
-        holder.icon.setImageResource(item.imageResId)
+       // holder.icon.setImageResource(item.imageResId)
         holder.itemView.setOnClickListener { onItemClick(item) }
     }
 

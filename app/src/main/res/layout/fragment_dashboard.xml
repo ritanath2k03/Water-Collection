@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout   xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-<data>
-    <variable
-        name="viewModel"
-        type="com.rith.muski.viewmodel.AddUserViewModel" />
-</data>
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rith.muski.viewmodel.AddUserViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,36 +40,161 @@
             app:layout_constraintStart_toStartOf="@+id/v_left"
             app:layout_constraintTop_toTopOf="@+id/v_top">
 
-            <ImageView
-                android:layout_width="@dimen/_55sdp"
-                android:layout_height="@dimen/_55sdp"
-                android:background="@drawable/admin_image_circle_bg"
-                android:src="@drawable/ic_launcher_foreground" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:src="@drawable/user_face"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@drawable/admin_image_circle_bg"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#FF000000"
+                    app:layout_constraintTop_toTopOf="parent" />
+
 
             <TextView
                 android:id="@+id/adminabout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="@dimen/_13sdp"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:gravity="center_vertical"
                 android:maxLines="3"
-                android:text="I am Rith fasfgwebgdfv afwefgagvwaegdsa fsafweafdsgfsagsas sfsaff" />
+                android:text="Hi Rith good to see you again.\nLet's resume your industry progress."
+                android:textSize="@dimen/_13sdp" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="0dp"
-            android:background="@drawable/user_add_layout_bg"
             android:layout_height="0dp"
+            android:background="@color/snow_white"
             app:layout_constraintBottom_toTopOf="@+id/h_bot_mid"
             app:layout_constraintEnd_toStartOf="@+id/v_right"
             app:layout_constraintStart_toStartOf="@+id/v_left"
-            android:rowCount="2"
-            android:columnCount="2"
             app:layout_constraintTop_toBottomOf="@+id/h_mid">
 
         </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/h_center_mid"
+            app:layout_constraintEnd_toStartOf="@+id/piechart"
+            app:layout_constraintStart_toStartOf="@+id/v_left"
+            app:layout_constraintTop_toTopOf="@+id/h_bot_mid">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_15sdp"
+
+                    android:background="@color/five_color" />
+
+                <View
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:background="@color/oneL_color" />
+
+                <View
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:background="@color/twentyL_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="500ml" />
+
+                <TextView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="1L" />
+
+                <TextView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="20L" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center_horizontal"
+                    android:text="Total profit:    "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalpaidamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center_horizontal"
+                    android:text="$ 1242.89"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="center_horizontal"
+                    android:text="Due Amount: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totaldueamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="center_horizontal"
+                    android:text="$ 10987.40"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ir.mahozad.android.PieChart
+            android:id="@+id/piechart"
+            android:layout_width="144dp"
+            android:layout_height="153dp"
+            app:layout_constraintBottom_toTopOf="@+id/h_center_mid"
+            app:layout_constraintEnd_toStartOf="@+id/v_right"
+            app:layout_constraintTop_toBottomOf="@id/h_mid"
+            app:layout_constraintTop_toTopOf="@+id/h_bot_mid" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/v_left"
@@ -88,14 +215,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1" />
+            app:layout_constraintGuide_percent="0.07" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/h_mid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.25" />
+            app:layout_constraintGuide_percent="0.17" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/h_bot"
@@ -105,11 +232,18 @@
             app:layout_constraintGuide_percent="0.9" />
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h_center_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/h_bot_mid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.75" />
+            app:layout_constraintGuide_percent="0.23" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

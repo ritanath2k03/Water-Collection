@@ -15,13 +15,103 @@
 
         <TextView
             android:id="@+id/header"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="order fragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/snow_white"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_10sdp"
+            android:text="Orders"
             android:textSize="@dimen/_20sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintBottom_toTopOf="@+id/v_top"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+           <EditText
+               android:id="@+id/searchbar"
+               android:layout_width="0dp"
+               android:layout_height="@dimen/_30sdp"
+               app:layout_constraintTop_toBottomOf="@id/header"
+               app:layout_constraintLeft_toLeftOf="@id/v_left"
+               app:layout_constraintRight_toRightOf="@id/v_right"
+               android:drawableRight="@drawable/baseline_search_24"
+               android:hint="Search"
+               android:layout_marginTop="@dimen/_10sdp"
+               android:background="@drawable/search_bar_bg"
+               android:paddingStart="@dimen/_12sdp"
+               />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderrecyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            app:layout_constraintLeft_toLeftOf="@id/v_left"
+            app:layout_constraintRight_toRightOf="@id/v_right"
+            app:layout_constraintTop_toBottomOf="@id/h_mid"
+            app:layout_constraintBottom_toTopOf="@id/h_bot"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addorderbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/h_bot"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:src="@drawable/baseline_add_24"
+            android:backgroundTint="@color/snow_white"
+            />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.06" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.07" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h_bot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h_center_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h_bot_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.23" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

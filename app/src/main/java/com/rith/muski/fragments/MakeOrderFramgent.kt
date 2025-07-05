@@ -24,10 +24,10 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 
-class MakeOrderFramgent: Fragment() {
-    private lateinit var  makeOrderBinding: FragmentMakeOrderBinding
-    private  lateinit var orderViewModel: OrderViewmodel
-    private lateinit var  addUserViewModel: AddUserViewModel
+class MakeOrderFramgent : Fragment() {
+    private lateinit var makeOrderBinding: FragmentMakeOrderBinding
+    private lateinit var orderViewModel: OrderViewmodel
+    private lateinit var addUserViewModel: AddUserViewModel
     private lateinit var userList: List<User>
     private lateinit var selectedUser: User
     val fiveHundredMl = ObservableField<String>("")
@@ -39,21 +39,17 @@ class MakeOrderFramgent: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        makeOrderBinding=DataBindingUtil.inflate(inflater, R.layout.fragment_make_order,container,false)
-        addUserViewModel=ViewModelProvider(this)[AddUserViewModel::class.java]
-        orderViewModel=ViewModelProvider(this)[OrderViewmodel::class.java]
+        makeOrderBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_make_order, container, false)
+        addUserViewModel = ViewModelProvider(this)[AddUserViewModel::class.java]
+        orderViewModel = ViewModelProvider(this)[OrderViewmodel::class.java]
         addUserViewModel.getAllUser()
-    listenUserList()
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
-                .withZone(ZoneId.of("Asia/Kolkata"))
-            val formattedDate = formatter.format(Instant.now())
+        listenUserList()
+        makeOrderBinding.orderDateInput.setText(getCurrentTime())
 
-            makeOrderBinding.orderDateInput.setText(formattedDate)
-        }
         setupPriceCalculation()
         setListners()
-        return  makeOrderBinding.root
+        return makeOrderBinding.root
 
     }
 
@@ -75,11 +71,10 @@ class MakeOrderFramgent: Fragment() {
                 o_due_payment = due,
                 o_five_ml = five,
                 o_one_l = one,
-                o_twenty_l = twenty,null
+                o_twenty_l = twenty, null
             )
             orderViewModel.insertOrder(order)
-
-            makeOrderBinding.orderDateInput.setText("")
+            makeOrderBinding.orderDateInput.setText(getCurrentTime())
             makeOrderBinding.fiveHundredInput.setText("")
             makeOrderBinding.oneLitreInput.setText("")
             makeOrderBinding.twentyLitreInput.setText("")
@@ -133,21 +128,37 @@ class MakeOrderFramgent: Fragment() {
         addUserViewModel.userList.observe(viewLifecycleOwner) { users ->
             userList = users
             users.forEach { user ->
-                Log.d("UserList", "uId: ${user.uId}, name: ${user.name}, email: ${user.email}, phone: ${user.phone}, address: ${user.address}")
+                Log.d(
+                    "UserList",
+                    "uId: ${user.uId}, name: ${user.name}, email: ${user.email}, phone: ${user.phone}, address: ${user.address}"
+                )
             }
-            val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, users.map { it.name })
+            val adapter = ArrayAdapter(
+                requireContext(),
+                android.R.layout.simple_dropdown_item_1line,
+                users.map { it.name })
             makeOrderBinding.merchantInput.setAdapter(adapter)
 
             // Filter as user types
             makeOrderBinding.merchantInput.addTextChangedListener(object : TextWatcher {
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     val filteredNames = userList.filter {
                         it.name.contains(s.toString(), ignoreCase = true)
                     }.map { it.name }
 
-                    val filteredAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, filteredNames)
+                    val filteredAdapter = ArrayAdapter(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        filteredNames
+                    )
                     makeOrderBinding.merchantInput.setAdapter(filteredAdapter)
                     filteredAdapter.notifyDataSetChanged()
                 }
@@ -163,5 +174,15 @@ class MakeOrderFramgent: Fragment() {
         }
 
 
+    }
+
+    fun getCurrentTime(): String {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+                .withZone(ZoneId.of("Asia/Kolkata"))
+            val formattedDate = formatter.format(Instant.now())
+            return formattedDate
+        }
+        return ""
     }
 }

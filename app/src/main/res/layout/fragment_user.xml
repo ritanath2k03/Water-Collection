@@ -19,13 +19,14 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="0dp"
+            android:background="@color/snow_white"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_10sdp"
             android:text="Merchant enrollment form"
             android:textSize="@dimen/_20sdp"
-            android:background="@color/snow_white"
-            android:paddingLeft="@dimen/_10sdp"
-            android:gravity="center_vertical"
+            app:layout_constraintBottom_toTopOf="@+id/v_top"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <LinearLayout
@@ -97,19 +98,24 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:backgroundTint="@color/light_blue"
+                android:backgroundTint="@color/dark_blue"
                 android:text="Save Marchent"
                 app:layout_constraintTop_toBottomOf="@id/input_address" />
         </LinearLayout>
 
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.07" />
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/v_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.06" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/v_right"
             android:layout_width="wrap_content"

@@ -55,7 +55,13 @@ object QueriesBuilder {
             WHERE o_five_ml > 0;
         """
     }
-
+fun getOrdersForOrderList():String {
+    return """
+            SELECT o.*, u.* FROM orders o
+            JOIN user u ON o.u_id = u.u_id;
+            
+        """
+}
     fun getOneLOrderByWaterId(wId: Int):String {
         return """
             SELECT o.*, u.* FROM orders o
@@ -70,5 +76,11 @@ object QueriesBuilder {
             WHERE o_twenty_l > 0;
         """
     }
-
+    fun getOrderDataForPieChartInDashboard():String{return """SELECT 
+    SUM(o_paid) AS paid_amount,
+    SUM(o_due_payment) AS due_amount,
+    SUM(o_five_ml * 10.0) AS fiveH,
+    SUM(o_one_l * 20.0) AS oneL,
+    SUM(o_twenty_l * 30.0) AS twentyL
+FROM orders;"""}
 }

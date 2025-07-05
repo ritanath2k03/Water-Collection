@@ -6,129 +6,148 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/orderId"
-        android:layout_height="@dimen/_25sdp"
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:paddingLeft="@dimen/_5sdp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:text="Order ID:" />
+        android:layout_height="match_parent"
+        android:background="@color/off_green"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/orderAmount"
-        android:paddingLeft="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/_15sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="Order Details " />
+        <TextView
+            android:id="@+id/orderId"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="Order ID:" />
 
+        <TextView
+            android:id="@+id/orderAmount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+
+            android:layout_marginBottom="@dimen/_5sdp"
+
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="Amount:" />
+
+        <TextView
+            android:id="@+id/orderPaid"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="Paid:" />
+
+        <TextView
+            android:id="@+id/orderDue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="Due:" />
+
+        <TextView
+            android:id="@+id/orderDate"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="Date:" />
+
+        <TextView
+            android:id="@+id/bottle500ml"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="500ml Bottles:" />
+
+        <TextView
+            android:id="@+id/bottle1L"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="1L Bottles:" />
+
+        <TextView
+            android:id="@+id/bottle20L"
+            android:layout_width="match_parent"
+
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="20L Bottles:" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:text="Amount:" />
-
-    <TextView
-        android:id="@+id/orderPaid"
-        android:paddingLeft="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
-
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_width="match_parent"
-        android:text="Paid:" />
-
-    <TextView
-        android:id="@+id/orderDue"
-        android:paddingLeft="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
-
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_width="match_parent"
-        android:text="Due:" />
-
-    <TextView
-        android:id="@+id/orderDate"
-        android:paddingLeft="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
-
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_width="match_parent"
-        android:text="Date:" />
-
-    <TextView
-        android:id="@+id/bottle500ml"
-        android:paddingLeft="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
-
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_width="match_parent"
-        android:text="500ml Bottles:" />
-
-    <TextView
-        android:id="@+id/bottle1L"
-        android:paddingLeft="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
-
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_width="match_parent"
-        android:text="1L Bottles:" />
-
-    <TextView
-        android:id="@+id/bottle20L"
-        android:paddingLeft="@dimen/_5sdp"
-
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
-        android:layout_width="match_parent"
-        android:text="20L Bottles:" />
-
+        android:layout_height="match_parent"
+        android:background="@color/off_green"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/_15sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="Merchant Details " />
     <TextView
         android:id="@+id/userName"
-        android:paddingLeft="@dimen/_5sdp"
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
         android:layout_width="match_parent"
-        android:text="Merchant Name:" />
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/_5sdp"
+        android:text="Name:" />
 
     <TextView
         android:id="@+id/userAddress"
-        android:paddingLeft="@dimen/_5sdp"
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
         android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/_5sdp"
         android:text="Address:" />
+
     <TextView
         android:id="@+id/userPhone"
-        android:paddingLeft="@dimen/_5sdp"
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
         android:layout_width="match_parent"
-        android:text="Merchant Phone:" />
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/_5sdp"
+        android:text="Phone:" />
+
     <TextView
         android:id="@+id/useremail"
-        android:paddingLeft="@dimen/_5sdp"
-        android:background="@drawable/edittext_bg"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_height="@dimen/_25sdp"
         android:layout_width="match_parent"
-        android:text="Merchant Email:" />
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/_5sdp"
+        android:text="Email:" />
+    </LinearLayout>
 </LinearLayout>
